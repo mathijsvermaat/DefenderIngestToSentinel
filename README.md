@@ -1,5 +1,8 @@
 # Microsoft Defender for Endpoint → Sentinel Ingestion Estimator
 
+> [!NOTE]
+> **Part of the [Sentinel Maturity Model](https://github.com/mathijsvermaat/Sentinel-Maturity)** — tiered guidance for Microsoft Sentinel data-connector onboarding, retention and detection coverage. This script backs the [XDR Ingestion Calculator walkthrough](https://github.com/mathijsvermaat/Sentinel-Maturity/blob/main/procedures/xdr-ingestion-calculator.md); record the per-table GB/day it produces in the [assessment checklist](https://mathijsvermaat.github.io/sentinel-maturity-assessment.html).
+
 Estimate **daily** and **period** data ingestion (MB/GB) for Microsoft Defender for Endpoint (MDE) tables when sending to **Microsoft Sentinel (Log Analytics)** or a **data lake**.  
 The script samples real event rows via the **Advanced Hunting API**, measures **average record size** from CSV, and extrapolates **per‑table** and **aggregate** ingestion.
 
@@ -316,5 +319,15 @@ Install-Module MSAL.PS -Scope CurrentUser
 # - Sample size (e.g., 10000)
 # - Sampling method (press Enter for 'sample')
 ```
+
+***
+
+## Related
+
+- **[Sentinel Maturity Model](https://github.com/mathijsvermaat/Sentinel-Maturity)** — the tiered connector guidance model this script belongs to.
+- **[XDR Ingestion Calculator walkthrough](https://github.com/mathijsvermaat/Sentinel-Maturity/blob/main/procedures/xdr-ingestion-calculator.md)** — app-registration setup, running the script, and interpreting the estimate.
+- **[Microsoft Defender XDR connector guidance](https://github.com/mathijsvermaat/Sentinel-Maturity/blob/main/connectors/microsoft-defender-xdr.md)** — per-table retention recommendations and detection rationale.
+- **[XDR Data Volume Insights (KQL)](https://github.com/mathijsvermaat/DefenderIngestToSentinelKQL)** — the Advanced Hunting query equivalent, for when the connector is already enabled.
+- **[Assessment checklist](https://mathijsvermaat.github.io/sentinel-maturity-assessment.html)** — record the per-table GB/day and Analytics vs Data Lake tier choice.
 
 ***
